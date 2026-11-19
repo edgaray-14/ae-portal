@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navy: #1A1A2E;
+  --gold: #E0B840;
+  --bg: #f3f4f8;
+  --line: #d9dce3;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1c1f2b;
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  background: #1A1A2E;
+  color: #ffffff;
+  padding: 24px 16px;
+  overflow-y: auto;
+}
+
+.sidebar .logo {
+  width: 120px;
+  margin: 0 auto 20px;
+}
+
+.sidebar .student-name {
+  font-weight: bold;
+  text-align: center;
+}
+
+.sidebar .student-reg {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #aeb1c7;
+  margin-bottom: 26px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sidebar nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border-left: 4px solid transparent;
+  transition: background 0.2s ease;
+}
+
+.sidebar nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar nav a.active {
+  background: rgba(255, 255, 255, 0.14);
+  border-left-color: var(--gold);
+  font-weight: bold;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ===== MAIN AREA ===== */
+.main {
+  margin-left: 200px;
+  padding: 36px 40px 60px;
+  max-width: 1100px;
+}
+
+.main h1 {
+  font-size: 2rem;
+  color: var(--navy);
+}
+
+.main h2 {
+  font-size: 1.3rem;
+  color: var(--navy);
+  margin: 34px 0 14px;
+}
+
+.welcome .date {
+  color: #5b6070;
+  margin: 2px 0 10px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* ===== METRIC CARDS (Flexbox) ===== */
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.metric-card {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #d9dce3;
+  border-radius: 10px;
+  padding: 22px 20px;
+}
+
+.metric-label {
+  color: #5b6070;
+  font-size: 0.92rem;
+}
+
+.metric-value {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* ===== TABLES ===== */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+th,
+td {
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  text-align: left;
+}
+
+table.data thead th,
+table.timetable thead th {
+  background: var(--navy);
+  color: #ffffff;
+}
+
+table.data tbody tr:nth-child(even) td:not(.status-cell) {
+  background: #f8f9fc;
+}
+
+td.status-cell {
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Timetable layout */
+table.timetable {
+  table-layout: fixed;
+  min-width: 720px;
+}
+
+table.timetable th[scope="row"] {
+  width: 110px;
+  background: #eceef5;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+table.timetable td {
+  height: 52px;
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+table.timetable td small {
+  opacity: 0.8;
+}
+
+table.timetable thead th {
+  text-align: center;
+}
+
+.lunch {
+  text-align: center;
+}
+
+.placeholder p {
+  margin-top: 10px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 760px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 24px 16px 40px;
+  }
+}

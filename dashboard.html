@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | ISBAT Student Portal</title>
+
+  <!-- External CSS: all layout -->
+  <link rel="stylesheet" href="portal.css">
+
+  <!-- Internal CSS: quick-links grid only -->
+  <style>
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .quick-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 140px;
+      padding: 24px;
+      background: #ffffff;
+      border: 1px solid #d9dce3;
+      border-left: 6px solid #1A1A2E;
+      border-radius: 10px;
+    }
+
+    .quick-card h3 {
+      font-size: 1.25rem;
+      color: #1A1A2E;
+    }
+
+    .quick-card a {
+      align-self: flex-start;
+      color: #1A1A2E;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid #1A1A2E;
+    }
+
+    .quick-card a:hover {
+      color: #8a6d00;
+      border-bottom-color: #8a6d00;
+    }
+
+    @media (max-width: 560px) {
+      .quick-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <img src="isbat-logo.png" alt="ISBAT University logo" class="logo">
+    <p class="student-name">Ayesiga Edgar</p>
+    <p class="student-reg">BIT Year 2</p>
+    <nav>
+      <a class="active" href="dashboard.html">Dashboard</a>
+      <a href="courses.html">My Courses</a>
+      <a href="fees.html">Fee Statement</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <section class="welcome">
+      <h1>Welcome, Ayesiga Edgar</h1>
+      <p class="date" id="today">Today</p>
+      <!-- Inline CSS: status badge colours only -->
+      <span class="badge" style="background:#EAF3DE; color:#27500A;">Active</span>
+    </section>
+
+    <section>
+      <h2>Summary</h2>
+      <div class="metrics">
+        <div class="metric-card">
+          <span class="metric-label">GPA</span>
+          <span class="metric-value">4.12</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Credit Hours</span>
+          <span class="metric-value">18</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Outstanding Fee Balance</span>
+          <span class="metric-value">UGX 650,000</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Quick Links</h2>
+      <div class="quick-grid">
+        <div class="quick-card"><h3>Dashboard</h3><a href="dashboard.html">Go to Dashboard</a></div>
+        <div class="quick-card"><h3>My Courses</h3><a href="courses.html">View My Courses</a></div>
+        <div class="quick-card"><h3>Fee Statement</h3><a href="fees.html">View Fee Statement</a></div>
+        <div class="quick-card"><h3>Update Profile</h3><a href="#">Update Profile</a></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Show today's date
+    document.getElementById("today").textContent =
+      new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+  </script>
+
+</body>
+</html>

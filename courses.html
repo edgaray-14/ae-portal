@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Courses | ISBAT Student Portal</title>
+
+  <!-- External CSS: layout -->
+  <link rel="stylesheet" href="portal.css">
+
+  <!-- Internal CSS: timetable course colours only -->
+  <style>
+    .webtech  { background: #E6F1FB; color: #0C447C; border-left: 4px solid #378ADD; }
+    .cprog    { background: #EEEDFE; color: #3C3489; border-left: 4px solid #7F77DD; }
+    .database { background: #FAECE7; color: #712B13; border-left: 4px solid #D85A30; }
+    .sad      { background: #E1F5EE; color: #085041; border-left: 4px solid #1D9E75; }
+    .lunch    { background: #F1EFE8; color: #5F5E5A; font-style: italic; }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <img src="isbat-logo.png" alt="ISBAT University logo" class="logo">
+    <p class="student-name">Ayesiga Edgar</p>
+    <p class="student-reg">BIT Year 2</p>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a class="active" href="courses.html">My Courses</a>
+      <a href="fees.html">Fee Statement</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <h1>My Courses</h1>
+
+    <section>
+      <h2>Enrolled Courses</h2>
+      <div class="table-wrap">
+        <table class="data">
+          <caption class="sr-only">Enrolled courses this semester</caption>
+          <thead>
+            <tr>
+              <th scope="col">Course Code</th>
+              <th scope="col">Course Name</th>
+              <th scope="col">Credits</th>
+              <th scope="col">Lecturer</th>
+              <th scope="col">Room</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BIT2201</td><td>Web Technology</td><td>3</td><td>Mr. Ronald Kiggundu</td><td>Lab 2</td>
+              <td class="status-cell" style="background:#E1F5EE; color:#085041;">Active</td>
+            </tr>
+            <tr>
+              <td>BIT2202</td><td>C Programming</td><td>4</td><td>Ms. Joan Namatovu</td><td>Lab 1</td>
+              <td class="status-cell" style="background:#E1F5EE; color:#085041;">Active</td>
+            </tr>
+            <tr>
+              <td>BIT2203</td><td>Database Systems</td><td>3</td><td>Dr. Peter Okello</td><td>Room B12</td>
+              <td class="status-cell" style="background:#E1F5EE; color:#085041;">Active</td>
+            </tr>
+            <tr>
+              <td>BIT2204</td><td>Systems Analysis and Design</td><td>3</td><td>Mrs. Agnes Nabirye</td><td>Room A05</td>
+              <td class="status-cell" style="background:#E1F5EE; color:#085041;">Active</td>
+            </tr>
+            <tr>
+              <td>BIT2205</td><td>Business Communication</td><td>2</td><td>Mr. David Ssemwogerere</td><td>Room C03</td>
+              <td class="status-cell" style="background:#FAEEDA; color:#633806;">Pending</td>
+            </tr>
+            <tr>
+              <td>BIT2206</td><td>Computer Networks</td><td>3</td><td>Mr. Isaac Mwesigwa</td><td>Lab 3</td>
+              <td class="status-cell" style="background:#FAEEDA; color:#633806;">Pending</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Weekly Timetable</h2>
+      <div class="table-wrap">
+        <table class="timetable">
+          <caption class="sr-only">Weekly timetable, Monday to Friday, 8am to 5pm</caption>
+          <thead>
+            <tr>
+              <th scope="col">Time</th>
+              <th scope="col">Mon</th>
+              <th scope="col">Tue</th>
+              <th scope="col">Wed</th>
+              <th scope="col">Thu</th>
+              <th scope="col">Fri</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">08:00–09:00</th>
+              <td></td>
+              <td rowspan="2" class="cprog">C Programming<br><small>Lab 1</small></td>
+              <td></td>
+              <td rowspan="2" class="webtech">Web Technology<br><small>Lab 2</small></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">09:00–10:00</th>
+              <td rowspan="2" class="webtech">Web Technology<br><small>Lab 2</small></td>
+              <td rowspan="1" class="database">Database Systems<br><small>Room B12</small></td>
+              <td rowspan="2" class="cprog">C Programming<br><small>Lab 1</small></td>
+            </tr>
+            <tr>
+              <th scope="row">10:00–11:00</th>
+              <td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <th scope="row">11:00–12:00</th>
+              <td></td><td></td>
+              <td rowspan="2" class="cprog">C Programming<br><small>Lab 1</small></td>
+              <td></td><td></td>
+            </tr>
+            <tr>
+              <th scope="row">12:00–13:00</th>
+              <td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <th scope="row">13:00–14:00</th>
+              <td colspan="5" class="lunch">Lunch break</td>
+            </tr>
+            <tr>
+              <th scope="row">14:00–15:00</th>
+              <td rowspan="2" class="database">Database Systems<br><small>Room B12</small></td>
+              <td rowspan="2" class="sad">Systems Analysis and Design<br><small>Room A05</small></td>
+              <td></td>
+              <td class="sad">Systems Analysis and Design<br><small>Room A05</small></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">15:00–16:00</th>
+              <td></td><td></td>
+              <td rowspan="2" class="database">Database Systems<br><small>Room B12</small></td>
+            </tr>
+            <tr>
+              <th scope="row">16:00–17:00</th>
+              <td></td><td></td><td></td><td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
